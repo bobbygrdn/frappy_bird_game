@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk46k4lcd343x"]
+
+[ext_resource type="PackedScene" uid="uid://dmcwu6i2sb3gx" path="res://pipe.tscn" id="1_6a4tr"]
+[ext_resource type="Script" path="res://Assets/Scripts/pipes.gd" id="1_ml62a"]
+
+[node name="Pipes" type="Node2D" groups=["obstacle"]]
+script = ExtResource("1_ml62a")
+
+[node name="TopPipe" parent="." instance=ExtResource("1_6a4tr")]
+position = Vector2(1317, 306)
+rotation = 3.14159
+
+[node name="BottomPipe" parent="." instance=ExtResource("1_6a4tr")]
+position = Vector2(1317, 416)

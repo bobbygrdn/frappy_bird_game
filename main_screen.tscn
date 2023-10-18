@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://ces4bfx2qc5n6"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/main_screen.gd" id="1_jrawm"]
+[ext_resource type="FontFile" uid="uid://bwgqoyl34tusp" path="res://Assets/Fonts/flappy.ttf" id="1_kp545"]
+[ext_resource type="Script" path="res://Assets/Scripts/Directions.gd" id="3_lij3h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sylva"]
+font = ExtResource("1_kp545")
+font_size = 80
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_502ci"]
+font = ExtResource("1_kp545")
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainScreen" type="Node"]
+script = ExtResource("1_jrawm")
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.0
+offset_top = -180.0
+offset_right = 475.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Frappy Bird"
+label_settings = SubResource("LabelSettings_sylva")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Directions" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.5
+offset_top = -22.0
+offset_right = 203.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press Enter to Play"
+label_settings = SubResource("LabelSettings_502ci")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_lij3h")
+
+[node name="Timer" type="Timer" parent="Directions"]
+autostart = true
+
+[connection signal="timeout" from="Directions/Timer" to="Directions" method="_on_timer_timeout"]

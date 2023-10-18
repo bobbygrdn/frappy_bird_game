@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmcwu6i2sb3gx"]
+
+[ext_resource type="Texture2D" uid="uid://cpmgv2tnqftmg" path="res://Assets/Sprites/pipe.png" id="1_3iirw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wafat"]
+size = Vector2(66, 484)
+
+[node name="Pipe" type="CharacterBody2D" groups=["obstacle"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 250)
+scale = Vector2(1, 1.69965)
+texture = ExtResource("1_3iirw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 253)
+shape = SubResource("RectangleShape2D_wafat")

@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://du7gkndmx6h2s"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/score.gd" id="1_dsfhx"]
+[ext_resource type="FontFile" uid="uid://bwgqoyl34tusp" path="res://Assets/Fonts/flappy.ttf" id="4_7cmlu"]
+[ext_resource type="Script" path="res://Assets/Scripts/Medal.gd" id="5_lm4md"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6axxh"]
+font = ExtResource("4_7cmlu")
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_df768"]
+font = ExtResource("4_7cmlu")
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_44q1k"]
+font = ExtResource("4_7cmlu")
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Score" type="Node"]
+script = ExtResource("1_dsfhx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -35.5
+offset_right = 106.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Well Done!
+"
+label_settings = SubResource("LabelSettings_6axxh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_df768")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Press Enter to Play Again"
+label_settings = SubResource("LabelSettings_44q1k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Medal" type="Sprite2D" parent="."]
+position = Vector2(639, 543)
+script = ExtResource("5_lm4md")

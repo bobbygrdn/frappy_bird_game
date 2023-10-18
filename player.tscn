@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4fntcb5u3qyq"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/player.gd" id="1_3wtk8"]
+[ext_resource type="Texture2D" uid="uid://hnw5s6yea1wl" path="res://Assets/Sprites/bird.png" id="1_xywhh"]
+[ext_resource type="AudioStream" uid="uid://dgljikitpi1h8" path="res://Assets/Sounds/jump.wav" id="3_bhnjg"]
+[ext_resource type="AudioStream" uid="uid://83blae6hbwnm" path="res://Assets/Sounds/explosion.wav" id="4_ipo5x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_07hcg"]
+radius = 11.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3wtk8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_xywhh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(1.8, 1.4)
+shape = SubResource("CircleShape2D_07hcg")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bhnjg")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ipo5x")
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ipo5x")
