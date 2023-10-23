@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cib2mwl7b368c"]
+[gd_scene load_steps=8 format=3 uid="uid://cib2mwl7b368c"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/world.gd" id="1_fvaoi"]
 [ext_resource type="PackedScene" uid="uid://d4fntcb5u3qyq" path="res://player.tscn" id="2_kmuxu"]
@@ -11,6 +11,9 @@ font = ExtResource("5_djqmv")
 font_size = 40
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_v2ykd"]
+b = Vector2(1280, 0)
 
 [node name="World" type="Node"]
 script = ExtResource("1_fvaoi")
@@ -44,6 +47,11 @@ stream = ExtResource("8_lw1ha")
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="GameCeiling" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameCeiling"]
+shape = SubResource("SegmentShape2D_v2ykd")
 
 [connection signal="collided" from="GroundCollisionArea" to="." method="_on_ground_collision_area_collided"]
 [connection signal="collided" from="Player" to="." method="_on_player_collided"]
